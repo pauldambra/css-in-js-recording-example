@@ -1,6 +1,16 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import { styled } from '@mui/material/styles';
+import LoadingButton from '@mui/lab/LoadingButton';
+
+const DangerButton = styled(LoadingButton)(({ theme }) => ({
+  '&:active': {
+    backgroundColor: theme.status.danger,
+  },
+  '&.MuiLoadingButton-loading': {
+    backgroundColor: theme.status.danger,
+  }
+}));
 
 export default function DemoButton() {
   const [loading, setLoading] = React.useState(false);
@@ -12,9 +22,9 @@ export default function DemoButton() {
     return () => clearTimeout(timeout);
   });
 
-  return <Button variant="contained" loading={loading} endIcon={<SendIcon />} onClick={() => {
+  return <DangerButton variant="contained" loading={loading} endIcon={<SendIcon />} onClick={() => {
     console.log('clicked');
     setLoading(true);
     setClicks(clicks + 1);
-  }}>Click me to cause some mutations on the page. Already clicked {clicks} times</Button>;
+  }}>Click me to cause some mutations on the page. Already clicked {clicks} times</DangerButton>;
 }

@@ -16,7 +16,8 @@
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "posthog-js": "^1.216.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "@mui/lab": "^5.0.0-alpha.153"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
